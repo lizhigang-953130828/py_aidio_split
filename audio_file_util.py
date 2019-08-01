@@ -7,9 +7,9 @@ import os
 # 转换音频工具
 def audio_conversion(filePath, file_name, file_suffix):
     if file_suffix == '.mp3':
-        sound = AudioSegment.from_mp3(filePath)
         conversion_path = "aideo_file/conversion_audio/" + file_name + ".wav"
-        sound.export(conversion_path, format='wav')
+        ss = "C:/Users/lzg95/Desktop/ffmpeg-20190727-47b6ca0-win64-static/bin/ffmpeg.exe -i " + filePath + " -ar 16000 -ac 1 " + conversion_path
+        os.system(ss)
         return conversion_path
     else:
         return filePath
